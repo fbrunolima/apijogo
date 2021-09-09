@@ -38,3 +38,15 @@ C:\Users\bruno\source\repos\ApiGame\ApiGame\obj\Debug\net5.0\ref\ApiGame.dll
 C:\Users\bruno\source\repos\ApiGame\ApiGame\obj\Debug\net5.0\ApiGame.pdb
 C:\Users\bruno\source\repos\ApiGame\ApiGame\obj\Debug\net5.0\ApiGame.genruntimeconfig.cache
 C:\Users\bruno\source\repos\ApiGame\ApiGame\obj\Debug\net5.0\ApiGame.csproj.CopyComplete
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\ApiGame.xml
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\bruno\source\repos\ApiGame\ApiGame\obj\Debug\net5.0\ApiGame.MvcApplicationPartsAssemblyInfo.cs

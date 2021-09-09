@@ -19,6 +19,6 @@ namespace ApiGame.Services
 
         Task Atualizar(Guid id, double preco);
 
-        Task Remover(Guid id)
+        Task Remover(Guid id);
     }
 }

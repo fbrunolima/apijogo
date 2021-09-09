@@ -1,4 +1,3 @@
-using ApiGame.Controllers.V1;
 using ApiGame.Middleware;
 using ApiGame.Repositories;
 using ApiGame.Services;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,23 +29,12 @@ namespace ApiGame
         {
             services.AddScoped<JogoService, JogoServico>();
             services.AddScoped<IJogoRepository, JogoRepository>();
-
-            #region CicloDeVida
-
-            services.AddSingleton<IExemploSingleton, ExemploCicloDeVida>();
-            services.AddScoped<IExemploScoped, ExemploCicloDeVida>();
-            services.AddTransient<IExemploTransient, ExemploCicloDeVida>();
-
-            #endregion
-
+            services.AddControllersWithViews();
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ExemploApiCatalogoJogos", Version = "v1" });
-
-                var basePath = AppDomain.CurrentDomain.BaseDirectory;
-                var fileName = typeof(Startup).GetTypeInfo().Assembly.GetName().Name + ".xml";
-                c.IncludeXmlComments(Path.Combine(basePath, fileName));
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiGame", Version = "v1", });
             });
         }
 
@@ -55,19 +44,34 @@ namespace ApiGame
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiJogo V1"));
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
             app.UseMiddleware<ExceptionMiddleware>();
-
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
         }
     }
+}
