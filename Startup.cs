@@ -56,7 +56,7 @@ namespace ApiGame
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiJogo"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiJogo V1"));
             }
 
             app.UseMiddleware<ExceptionMiddleware>();
